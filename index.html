@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Safe educational malware behavior simulator demonstrating virus, worm, and Trojan concepts.">
+  <title>Safe Malware Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">⌘</div>
+        <div><strong>CYBERLAB</strong><span>EDUCATION CONSOLE</span></div>
+      </div>
+      <div class="side-label">SIMULATOR</div>
+      <button class="nav-item active" data-view="overview"><span>▦</span> Overview</button>
+      <button class="nav-item" data-sim="virus"><span>◉</span> Virus Simulation</button>
+      <button class="nav-item" data-sim="worm"><span>⌘</span> Worm Simulation</button>
+      <button class="nav-item" data-sim="trojan"><span>⬡</span> Trojan Simulation</button>
+      <button class="nav-item" data-view="comparison"><span>⇄</span> Compare Threats</button>
+      <div class="sidebar-bottom">
+        <div class="safe-mark"><span class="pulse"></span><div><b>SAFE MODE ACTIVE</b><small>Isolated visual simulation</small></div></div>
+        <small class="version">EDUCATIONAL BUILD · v1.0</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="crumb">CyberLab <span>/</span> <b id="crumb-current">Overview</b></div>
+        <div class="top-right"><span class="live-dot"></span> LOCAL SIMULATION <span class="avatar">ML</span></div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <div class="eyebrow"><span class="tiny-shield">◆</span> PYTHON SECURITY LAB</div>
+          <h1>Safe Malware Behavior <span>Simulator</span></h1>
+          <p>Explore how common malware types behave in a controlled, fictional environment.</p>
+          <div class="hero-tags"><span>● No real files modified</span><span>● No network activity</span><span>● No payload execution</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="core-shield">⬡<span>✓</span></div>
+          <i class="node n1"></i><i class="node n2"></i><i class="node n3"></i><i class="node n4"></i>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card"><div class="stat-top"><span>SIMULATION TYPES</span><span class="stat-icon purple">⌘</span></div><strong>03</strong><small>Virus · Worm · Trojan</small></article>
+        <article class="stat-card"><div class="stat-top"><span>VIRTUAL OBJECTS</span><span class="stat-icon blue">▦</span></div><strong>19</strong><small>8 files + 8 computers + 3 apps</small></article>
+        <article class="stat-card"><div class="stat-top"><span>REAL SYSTEM IMPACT</span><span class="stat-icon green">✓</span></div><strong>0%</strong><small>Fictional objects only</small></article>
+        <article class="stat-card"><div class="stat-top"><span>SESSION STATUS</span><span class="stat-icon orange">◷</span></div><strong class="status-text">READY</strong><small id="last-run">Waiting for a simulation</small></article>
+      </section>
+
+      <section class="section-heading">
+        <div><div class="eyebrow">INTERACTIVE MODULES</div><h2>Choose a simulation</h2><p>Run a demonstration to see the behavior and its final result.</p></div>
+        <button class="button button-quiet" id="run-all-top">▶ Run all</button>
+      </section>
+
+      <section class="module-grid">
+        <article class="module-card virus-card">
+          <div class="module-head"><div class="module-icon">◉</div><span class="tag tag-purple">REPLICATION</span></div>
+          <h3>Virus</h3><p>Watch a simulated virus spread between fictional files over three rounds.</p>
+          <div class="mini-visual files-visual"><span class="file infected">DOC</span><span class="file">DOC</span><span class="file">IMG</span><span class="file">PDF</span><span class="file">XLS</span></div>
+          <button class="button button-primary" data-sim="virus">Launch simulation <span>→</span></button>
+        </article>
+        <article class="module-card worm-card">
+          <div class="module-head"><div class="module-icon">⌘</div><span class="tag tag-blue">PROPAGATION</span></div>
+          <h3>Worm</h3><p>Visualize how a fictional worm may reach connected computers across a virtual network.</p>
+          <div class="mini-visual network-visual"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></div>
+          <button class="button button-primary" data-sim="worm">Launch simulation <span>→</span></button>
+        </article>
+        <article class="module-card trojan-card">
+          <div class="module-head"><div class="module-icon">⬡</div><span class="tag tag-orange">DISGUISE</span></div>
+          <h3>Trojan</h3><p>Inspect fictional programs and learn how a suspicious app can appear trustworthy.</p>
+          <div class="mini-visual app-visual"><span>▣</span><span>▧</span><span class="warning-app">!</span></div>
+          <button class="button button-primary" data-sim="trojan">Launch simulation <span>→</span></button>
+        </article>
+      </section>
+
+      <section class="lower-grid">
+        <article class="panel">
+          <div class="panel-title"><div><h3>Recent activity</h3><p>Actions from this browser session</p></div><span class="tag tag-green">LOCAL ONLY</span></div>
+          <div id="activity-list" class="activity-list"><div class="empty-state"><span>◷</span><div><b>No activity yet</b><small>Launch a module to see its results here.</small></div></div></div>
+        </article>
+        <article class="panel learn-panel">
+          <div class="panel-title"><div><h3>Learning objective</h3><p>What this lab demonstrates</p></div><span class="stat-icon green">✓</span></div>
+          <p>Malware categories describe different behaviors. A virus attaches to objects, a worm propagates between systems, and a Trojan relies on disguise and user execution.</p>
+          <div class="notice"><span>ⓘ</span><div><b>Safety note</b><small>All actions are simulated in this webpage. No real files, computers, or programs are touched.</small></div></div>
+        </article>
+      </section>
+
+      <section class="comparison-section hidden" id="comparison-view">
+        <div class="section-heading"><div><div class="eyebrow">QUICK REFERENCE</div><h2>Malware type comparison</h2><p>Compare the concepts covered in the original Python script.</p></div></div>
+        <div class="table-wrap"><table><thead><tr><th>TYPE</th><th>MAIN BEHAVIOR</th><th>KEY CHARACTERISTIC</th><th>SIMULATION MODEL</th></tr></thead><tbody>
+          <tr><td><span class="table-dot purple-dot"></span>Virus</td><td>Replication</td><td>Attaches to other objects</td><td>Fictional files</td></tr>
+          <tr><td><span class="table-dot blue-dot"></span>Worm</td><td>Propagation</td><td>Spreads between systems</td><td>Virtual computers</td></tr>
+          <tr><td><span class="table-dot orange-dot"></span>Trojan</td><td>Disguise</td><td>Pretends to be legitimate</td><td>Mock programs</td></tr>
+        </tbody></table></div>
+        <div class="notice wide-notice"><span>✓</span><div><b>Simulation boundary</b><small>This website models concepts only. No real malicious activity is performed.</small></div></div>
+      </section>
+
+      <section class="results-panel hidden" id="results-panel" aria-live="polite">
+        <div class="results-header"><div><div class="eyebrow">SIMULATION OUTPUT</div><h2 id="result-title">Virus simulation</h2><p id="result-subtitle">Fictional environment · Safe mode</p></div><button class="close-button" id="close-results" aria-label="Close results">×</button></div>
+        <div id="result-content"></div>
+      </section>
+      <footer><span>CYBERLAB <b>·</b> SAFE MALWARE SIMULATOR</span><span>Made for educational demonstration <b>·</b> No real system impact</span></footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
